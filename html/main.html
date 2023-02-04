@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="main-top-box">
+            <div class="main-top-col col-left">
+                <div class="top-box-info">
+                    <p class="top-box-desc"><span>모아타운, 가로정비, 소규모재건축</span> 추진 현황을 알려드립니다.</p>
+                    <i class="top-box-icon"></i>
+                </div>
+                <div class="box-top10">
+                    <a href="" class="link-top10">인기 조회수 TOP 10위</a>
+                </div>
+            </div>
+            <div class="main-top-col">
+                <div class="main-top-column">
+                    <a class="column-item">
+                        <i class="ic-main-1"></i>
+                        <span class="column-text">분양대행의뢰</span>
+                    </a>
+                    <a class="column-item">
+                        <i class="ic-main-2"></i>
+                        <span class="column-text">광고·제휴 문의</span>
+                    </a>
+                    <a class="column-item">
+                        <i class="ic-main-3"></i>
+                        <span class="column-text">조합추진문의</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content-section">
+            <div class="main-content-title-box">
+                <div class="title-group">
+                    <h2 class="m-content-title">분양 매물</h2>
+                    <a href="" class="link-more"><i class="ic-more"></i><span class="for-a11y">더보기</span></a>
+                </div>
+            </div>
+            <div class="lots-box">
+                <a href="" class="lots-item">
+                    <img src="https://via.placeholder.com/200">
+                    <div class="lots-item-info">
+                        <p class="name clamp">한강스테이</p>
+                        <p class="address clamp">서울 강서구 염창동 서울 강서구 염창동</p>
+                    </div>
+                </a>
+                <a href="" class="lots-item">
+                    <img src="https://via.placeholder.com/200">
+                    <div class="lots-item-info">
+                        <p class="name clamp">한강스테이</p>
+                        <p class="address clamp">서울 강서구 염창동 서울 강서구 염창동</p>
+                    </div>
+                </a>
+                <a href="" class="lots-item">
+                    <img src="https://via.placeholder.com/200">
+                    <div class="lots-item-info">
+                        <p class="name clamp">한강스테이</p>
+                        <p class="address clamp">서울 강서구 염창동 서울 강서구 염창동</p>
+                    </div>
+                </a>
+                <a href="" class="lots-item">
+                    <img src="https://via.placeholder.com/200">
+                    <div class="lots-item-info">
+                        <p class="name clamp">한강스테이</p>
+                        <p class="address clamp">서울 강서구 염창동 서울 강서구 염창동</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content-section">
+            <div class="main-content-title-box">
+                <p class="m-content-title-desc">모아타운, 가로정비, 소규모재건축</p>
+                <div class="title-group">
+                    <h2 class="m-content-title">추진 현황</h2>
+                    <a href="" class="link-more"><i class="ic-more"></i><span class="for-a11y">더보기</span></a>
+                </div>
+            </div>
+            <div class="m-map-box">
+                지도영역
+                <div class="circle-item" style="top:40px;left:100px;width:50px">20</div>
+                <div class="circle-item" style="top:100px;left:20px;width:80px">67</div>
+            </div>
+        </div>
+
+        <div class="main-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.main-banner', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

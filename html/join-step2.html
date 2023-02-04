@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="join-form-area">
+            <h2 class="join-form-title">공인중개사 정보</h2>
+            <p class="join-desc">※ 공인중개사법 제18조 2의 취지에 적합한 표시의무(상호명, 등 록관청에 신고된 전화번호, 소재지, 성명)를 기입하시기 바랍니다. 이에 발생한 문제는 새집투어에서는 책임 지지 않습니다.</p>
+            <p class="join-requisite"><span class="requisite">*</span> 필수입력사항</p>
+            <div class="join-form-section">
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 중개사무소명</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 대표자명</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 사업자등록번호</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 중개사무소 등록번호</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+            </div>
+            <div class="join-type-choice">
+                <div class="choice-item">
+					<span class="form_element-radio">
+						<input type="radio" id="typeA" name="choiceA" checked>
+						<label for="typeA"><span class="label-value">대표</span></label>
+					</span>
+                </div>
+                <div class="choice-item">
+					<span class="form_element-radio">
+						<input type="radio" id="typeB" name="choiceA">
+						<label for="typeB"><span class="label-value">직원</span></label>
+					</span>
+                </div>
+            </div>
+
+            <div class="join-title-box">
+                <h2 class="join-form-title">회원 정보</h2>
+                <p class="join-requisite"><span class="requisite">*</span> 필수입력사항</p>
+            </div>
+            <div class="join-form-section">
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 이름</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 휴대전화</dt>
+                    <dd class="form-content">
+                        <input type="tel" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 이메일</dt>
+                    <dd class="form-content">
+                        <div class="form-group">
+                            <div class="form-col">
+                                <input type="text" class="input-basic">
+                            </div>
+                            <div class="form-unit">@</div>
+                            <div class="form-col">
+                                <input type="text" class="input-basic">
+                            </div>
+                            <div class="form-col">
+                                <select name="" id="">
+                                    <option value="">직접입력</option>
+                                </select>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 비밀번호</dt>
+                    <dd class="form-content">
+                        <input type="password" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 비밀번호 확인</dt>
+                    <dd class="form-content">
+                        <input type="password" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title">주소</dt>
+                    <dd class="form-content">
+                        <div class="form-group post">
+                            <input type="text" class="input-basic">
+                            <button type="button" class="btn-basic-a">주소검색</button>
+                        </div>
+                        <div class="form-group address">
+                            <input type="text" class="input-basic">
+                            <input type="text" class="input-basic">
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="join-agree-section">
+                <span class="box-checkbox-a all-agree">
+                    <input type="checkbox" id="agreeAll" class="form-checkbox" />
+                    <label for="agreeAll">전체 동의하기</label>
+                </span>
+                <div class="join-agree-group">
+                    <div class="join-agree-col">
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree1" class="form-checkbox" />
+                            <label for="agree1"><span class="requisite">[필수]</span> 만 14세 이상입니다.</label>
+                        </span>
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree2" class="form-checkbox" />
+                            <label for="agree2"><span class="requisite">[필수]</span> <a href="">이용약관 동의</a></label>
+                        </span>
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree3" class="form-checkbox" />
+                            <label for="agree3"><span class="requisite">[필수]</span> <a href="">개인정보 수집·이용 동의</a></label>
+                        </span>
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree4" class="form-checkbox" />
+                            <label for="agree4"><span class="requisite">[필수]</span> <a href="">위치 기반 서비스약관 동의</a></label>
+                        </span>
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree5" class="form-checkbox" />
+                            <label for="agree5"><span class="requisite">[필수]</span> <a href="">매물 관리 정책 동의</a></label>
+                        </span>
+                    </div>
+                    <div class="join-agree-col">
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree11" class="form-checkbox" />
+                            <label for="agree11">[선택] 부동산정보 및 혜택 알림</label>
+                        </span>
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree12" class="form-checkbox" />
+                            <label for="agree12">[선택] 이메일 수신 동의(광고, 이벤트 등)</label>
+                        </span>
+                        <span class="box-checkbox-a">
+                            <input type="checkbox" id="agree13" class="form-checkbox" />
+                            <label for="agree13">[선택] SMS 수신 동의(광고, 이벤트 등)</label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" class="btn-basic-b">회원가입</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

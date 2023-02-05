@@ -27,7 +27,7 @@ input[type='text']::-ms-clear {display:none !important}
 input[type='search']::-webkit-search-cancel-button {display:none !important}
 input[type='file'] {line-height:1;padding:0 16px;border:1px solid #666;font-size:14px;font-family:'NanumSquare', HelveticaNeue,AppleSDGothicNeo,sans-serif;cursor:pointer;outline:none;box-sizing:border-box}
 
-select {font-family:'NanumSquare', HelveticaNeue,AppleSDGothicNeo,sans-serif;font-size:14px;border:1px solid #ddd;height:36px;line-height:36px;padding:0 16px;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:url("../../images/common/blt-select.png") no-repeat 100% 50%}
+select {font-family:'NanumSquare', HelveticaNeue,AppleSDGothicNeo,sans-serif;font-size:14px;border:1px solid #ddd;height:36px;line-height:36px;padding:0 16px;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:url("../../images/common/blt-select.png") no-repeat 100% 50%;color:#000}
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {color:#999}
 input:-moz-placeholder,
@@ -196,7 +196,7 @@ html.scroll_off {overflow:hidden}
 }
 
 /* button */
-.btn-basic-a {height:36px;display:flex;align-items:center;justify-content:center;padding:0 12px;font-size:14px;background-color:#f5f6f7}
+.btn-basic-a {height:36px;display:flex;align-items:center;justify-content:center;padding:0 12px;font-size:14px;background-color:#f5f6f7;color:#000}
 .btn-basic-b {height:36px;display:flex;align-items:center;justify-content:center;padding:0 24px;font-size:14px;background-color:#000;color:#fff}
 @media (min-width:1024px) {
     .btn-basic-b {height:48px;padding:0 40px;font-size:16px;font-weight:700}

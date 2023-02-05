@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="my-info">
+            <div class="my-img">
+                <img src="https://via.placeholder.com/200">
+                <div class="join-type naver"><i class="ic-join-naver"></i></div>
+                <!--
+                <div class="join-type kakao"><i class="ic-join-kakao"></i></div>
+                <div class="join-type join-1"><i class="ic-join-logo"></i></div>
+                <div class="join-type join-2"><i class="ic-join-logo"></i></div>
+                -->
+            </div>
+            <p class="my-name">새집투어</p>
+            <button type="button" class="btn-setup"><i class="ic-setup"></i>편집</button>
+        </div>
+
+        <div class="accordion-list">
+            <div class="accordion-group">
+                <div class="accordion-title">
+                    <div class="accordion-title-group">
+                        <h2 class="accordion-title-data"><i class="ic-my-menu1"></i>관심매물</h2>
+                        <span class="count">+2</span>
+                    </div>
+                    <p class="use-info">하트를 한번 더 누르시면 관심매물에서 삭제됩니다.</p>
+                    <button type="button" class="btn-accordion"><i class="ic-arrow"></i><span class="for-a11y">열기</span></button>
+                </div>
+                <div class="detailed-index">
+                    <div class="data-list">
+                        <div class="data-item">
+                            <div class="data-check"><button type="button" class="btn-interest active"><i class="ic-interest"></i><span class="for-a11y">관심상품</span></button></div>
+                            <div class="data-col clamp">
+                                <span class="data-col-item">소규모재건축</span>
+                                <span class="data-col-item">한강스테이</span>
+                                <span class="data-col-item">서울 동대문구 제기동 28 서울 동대문구 제기동 28</span>
+                            </div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-check"><button type="button" class="btn-interest active"><i class="ic-interest"></i><span class="for-a11y">관심상품</span></button></div>
+                            <div class="data-col clamp">
+                                <span class="data-col-item">소규모재건축</span>
+                                <span class="data-col-item">한강스테이</span>
+                                <span class="data-col-item">서울 동대문구 제기동 28 서울 동대문구 제기동 28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-group">
+                <div class="accordion-title">
+                    <div class="accordion-title-group">
+                        <h2 class="accordion-title-data"><i class="ic-my-menu2"></i>최근 본 집</h2>
+                        <span class="count">+2</span>
+                    </div>
+                    <button type="button" class="btn-accordion"><i class="ic-arrow"></i><span class="for-a11y">열기</span></button>
+                </div>
+                <div class="detailed-index">
+                    <div class="data-list">
+                        <div class="data-item">
+                            <div class="data-check"><button type="button" class="btn-interest"><i class="ic-interest"></i><span class="for-a11y">관심상품</span></button></div>
+                            <div class="data-col clamp">
+                                <span class="data-col-item">소규모재건축</span>
+                                <span class="data-col-item">한강스테이</span>
+                                <span class="data-col-item">서울 동대문구 제기동 28 서울 동대문구 제기동 28</span>
+                            </div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-check"><button type="button" class="btn-interest"><i class="ic-interest"></i><span class="for-a11y">관심상품</span></button></div>
+                            <div class="data-col clamp">
+                                <span class="data-col-item">소규모재건축</span>
+                                <span class="data-col-item">한강스테이</span>
+                                <span class="data-col-item">서울 동대문구 제기동 28 서울 동대문구 제기동 28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-group">
+                <div class="accordion-title">
+                    <div class="accordion-title-group">
+                        <h2 class="accordion-title-data"><i class="ic-my-menu3"></i>분양알림 목록</h2>
+                        <span class="count">+2</span>
+                    </div>
+                    <p class="use-info">분양이 시작되면 상담사의 안내 전화를 받을 수 있습니다.</p>
+                    <button type="button" class="btn-accordion"><i class="ic-arrow"></i><span class="for-a11y">열기</span></button>
+                </div>
+                <div class="detailed-index">
+                    <div class="data-list">
+                        <div class="data-item">
+                            <div class="data-check notice">분양알림</div>
+                            <div class="data-col clamp">
+                                <span class="data-col-item">소규모재건축</span>
+                                <span class="data-col-item">한강스테이</span>
+                                <span class="data-col-item">서울 동대문구 제기동 28 서울 동대문구 제기동 28</span>
+                            </div>
+                        </div>
+                        <div class="data-item">
+                            <div class="data-check notice">분양알림</div>
+                            <div class="data-col clamp">
+                                <span class="data-col-item">소규모재건축</span>
+                                <span class="data-col-item">한강스테이</span>
+                                <span class="data-col-item">서울 동대문구 제기동 28 서울 동대문구 제기동 28</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="push-box">
+            <p class="push-title">푸시알림</p>
+            <span class="switch">
+                <input type="checkbox" name="" id="pushNotice">
+                <label for="pushNotice"><span class="slider"></span></label>
+            </span>
+        </div>
+
+        <div class="main-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.main-banner', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

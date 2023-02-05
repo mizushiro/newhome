@@ -16,58 +16,132 @@
     <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
     <style>
         .a11y-hidden{overflow: hidden; position: absolute !important; clip: rect(0, 0, 0, 0); clip-path: circle(0); width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; top:0 !important; }
+       
         .content-wrap.type-map{display: flex; width: 100%; padding: 48px 0 0;}
-        .map-area{position: relative; width:100%;  background-color: #fff;}
+        .map-area{position: relative; width:100%;  background-color: rgb(128, 164, 161);}
 
-        .map-left{position: fixed; top:70px; left:18px; width: 80px;}
-        .map-right{position: fixed; top:70px; right:18px; width: 42px;}
-        .map-area .btn{width: 100%; border:1px solid #b4b4b4; border-radius: 4px; background-color: #fff; padding: 0; word-break: keep-all; line-height: 1.2; display: flex; align-items: center; justify-content: center; padding: 12px 0 10px; text-align: center; cursor: pointer; font-weight: 700; position: relative; overflow: hidden;}
-        .map-area .btn.selected{background-color: #bec033; color:#fff;}
-        .map-area label.btn{padding: 9px 0 7px; }
+        .map-left{position: fixed; top:70px; left:18px;  z-index: 1000;}
+        .map-right{position: fixed; top:70px; right:18px; width: 42px; z-index: 1000;}
+       
+        .map-area .btn{width: 100%; border:1px solid #b4b4b4; border-radius: 4px; background-color: #fff; word-break: keep-all; line-height: 1.2; display: flex; align-items: center; justify-content: center; padding: 12px 4px 10px; text-align: center; cursor: pointer; font-weight: 700; position: relative; overflow: hidden;}
+        .map-area .btn.gray{background:#626262; border:0; color:#fff; padding: 9px 0 7px;}
+
         .map-area .btn.primay{color: #ff0000;}
         .map-area .btn + .btn{margin-top: 5px;}
 
-        .map-area .btn.current{width:42px; height:42px; background:#626262; border-radius: 50%; border:0; margin-bottom: 16px;}
-        .map-area .btn.gray{background:#626262; border:0; color:#fff;}
-        .map-area :checked + .btn.current,
-        .map-area :checked + .btn.gray{background:#ff0000; border:0; color:#fff;}
+        /* button active */
+        .map-area .btn.active{background-color: #bec033; color:#fff;}
+        .map-area .btn.gray.active{background:#ff0000; border:0; color:#fff;}
 
         .map-around input{opacity: 0; display: inline-block;position: absolute;z-index: -1;vertical-align: top;appearance: none;-moz-appearance: none;-webkit-appearance: none;margin: 0;}
         .map-around input:checked + label.btn{background-color: #626262; color:#fff;}
         .map-around label.btn{padding:5px 0 3px; border:0;}
         .map-around {position: relative; width: 100%; background-color: #626262; padding: 2px; margin-top: 6px; border-radius: 4px;}
         
-        .map-around input:checked ~ .map-around-wrap{margin-top:5px}
-        .map-around-wrap::after{content: ">"; display: block; height: 20px; width: 20px; transform: rotate(90deg) translate(7px ,-26px); color: #fff; transform-origin: 0 0;}
+        .map-around-wrap::after{content: ">"; height: 20px; width: 20px; transform: rotate(90deg) translate(1px ,-29px); color: #fff; transform-origin: 0 0; display: flex; justify-content: center; align-items: center;}
         .map-around .map-around-wrap .btn{display: none; padding:0 0 100%; line-height: 0; border: 0;}
+        .map-around input:checked ~ .map-around-wrap{margin-top:5px}
         .map-around input:checked ~ .map-around-wrap .btn{display: block;}
-        .map-around input:checked ~ .map-around-wrap::after{transform: rotate(-90deg) translate(-15px ,12px);}
-        .map-around-wrap .btn{margin-top: 2px;}
+        .map-around input:checked ~ .map-around-wrap::after{transform: rotate(-90deg) translate(-20px ,9px);}
 
+        .map-around-wrap .btn + .btn{margin-top: 2px;}
         [data-icon]::after{content:""; display:block; position: absolute; top:0; left:0;}
+
         .map-area [data-icon]::after{width:100%; height: 100%; background-image: url(../assets/images/map/sp_map.png); background-repeat: no-repeat; background-size: auto 76px;}
+
         .map-area [data-icon="subway"]::after{background-position: 0 1px;}
         .map-area [data-icon="school"]::after{background-position: -37px 1px;}
         .map-area [data-icon="mart"]::after{background-position: -75px 1px;}
         .map-area [data-icon="pharmacy"]::after{background-position: -113px 1px;}
         .map-area [data-icon="park"]::after{background-position: -151px 1px;}
         .map-area [data-icon="current"]::after{background-position: -187px 3px;}
+        .map-area [data-icon="current"]{width:42px; height:42px; background:#626262; border-radius: 50%; border:0; margin-bottom: 16px;}
 
+        .map-area .active[data-icon]::after{background-position-y: -37px;}
+        .map-area .active[data-icon="subway"]::after{background-color:#9ba4e9;}
+        .map-area .active[data-icon="school"]::after{background-color:#70ccd7;}
+        .map-area .active[data-icon="mart"]::after{background-color:#ffae4e;}
+        .map-area .active[data-icon="pharmacy"]::after{background-color:#e397c6;}
+        .map-area .active[data-icon="park"]::after{background-color:#c5c735;}
 
+        .map-icon-point{position: absolute;z-index: 80;}
+        .map-box-point{position: absolute;z-index: 90; cursor: pointer;}
+        .map-box-point:hover .map-info{display: block;}
+        .map-box{position: absolute;font-weight: 700;color:#fff;text-align: center;display: flex;bottom: 15px;left: -24px;width: max-content;}
+        .map-box-wrap{width: 100%; height: 100%; background-color: #222;padding:6px; min-width:100px; min-height:40px; display:flex; justify-content: center; align-items: center;border-radius: 5px; z-index: 1;}
+        .map-box::after{content:"";display: block;position: absolute;bottom:-10px;left: 16px;width: 0;height: 0;border-bottom: 10px solid #222;border-top: 10px solid transparent;border-left: 10px solid #222;border-right: 10px solid transparent;transform: rotate(50deg);z-index: 0;}
+        .map-info{display:none; position: absolute; bottom:60px; left:-24px; background-color: #fff; border:1px solid #b4b4b4; color:#000; padding: 10px; white-space:nowrap; text-align: left;}
+        .map-info strong{display: block; font-size: 16px; font-weight: 700;}
 
-        .map-around :checked + [data-icon="subway"]::after{background-color:#9ba4e9;background-position: 0 -37px;}
-        .map-around :checked + [data-icon="school"]::after{background-color:#70ccd7;background-position: -37px -37px;}
-        .map-around :checked + [data-icon="mart"]::after{background-color:#ffae4e;background-position: -75px -37px;}
-        .map-around :checked + [data-icon="pharmacy"]::after{background-color:#e397c6;background-position: -113px -37px;}
-        .map-around :checked + [data-icon="park"]::after{background-color:#c5c735;background-position: -151px -37px;}
+        .map-box.ctg1 .map-box-wrap{background-color: #506e07 !important;}
+        .map-box.ctg1::after{border-bottom-color: #506e07 !important;border-left-color: #506e07 !important;}
+        .map-box.ctg3 .map-box-wrap{background-color: #671a9c !important;}
+        .map-box.ctg3::after{border-bottom-color: #671a9c !important;border-left-color: #671a9c !important;}
+        .map-box.ctg2 .map-box-wrap{background-color: #07356e !important;}
+        .map-box.ctg2::after{border-bottom-color: #07356e !important;border-left-color: #07356e !important;}
+        .map-box.ctg4 .map-box-wrap{background-color: #ff0000 !important;}
+        .map-box.ctg4::after{border-bottom-color: #ff0000 !important;border-left-color: #ff0000 !important;}
+
+        .map-icon{width: 23px; height: 23px; overflow: hidden; border-radius: 6px; position: relative; }
+        .map-icon::after{background-size: auto 46px !important;}
+        .map-icon[data-icon="subway"]::after{background-color:#9ba4e9;background-position: 0 -23px;}
+        .map-icon[data-icon="school"]::after{background-color:#70ccd7;background-position: -23px -23px;}
+        .map-icon[data-icon="mart"]::after{background-color:#ffae4e;background-position: -46px -23px;}
+        .map-icon[data-icon="pharmacy"]::after{background-color:#e397c6;background-position: -69px -23px;}
+        .map-icon[data-icon="park"]::after{background-color:#c5c735;background-position: -92px -23px;}
+
 
         @media (min-width:1024px) {
             .content-wrap.type-map{padding: 60px 0 0;}
+            .map-class{padding:8px; background-color: #fff; border-radius:10px;}
+            .map-left{top:108px; left:52px;}
+            .map-right{top:108px; right:52px; width: 60px;}
+            .map-area .btn{font-size: 16px;}
+            .map-box{font-size: 16px;}
+            .map-info{font-size: 16px; padding:15px 20px; bottom:70px;}
+            .map-info strong{font-size: 18px;}
+            .map-box-wrap{padding:6px; min-height:50px; min-width:110px; border-radius: 5px; }
+
+            .map-icon{width: 46px; height: 46px; overflow: hidden; border-radius: 6px; position: relative; }
+            .map-icon::after{background-size: auto 92px !important;}
+            .map-icon[data-icon="subway"]::after{background-color:#9ba4e9;background-position: 0 -46px;}
+            .map-icon[data-icon="school"]::after{background-color:#70ccd7;background-position: -46px -46px;}
+            .map-icon[data-icon="mart"]::after{background-color:#ffae4e;background-position: -92px -46px;}
+            .map-icon[data-icon="pharmacy"]::after{background-color:#e397c6;background-position: -138px -46px;}
+            .map-icon[data-icon="park"]::after{background-color:#c5c735;background-position: -184px -46px;}
+
+            .map-area [data-icon="current"]{width:60px; height:60px; margin-bottom: 32px;}
+            .map-area [data-icon]::after{background-size: auto 120px;}
+            .map-area [data-icon="subway"]::after{background-position: 0 0;}
+            .map-area [data-icon="school"]::after{background-position: -60px 0;}
+            .map-area [data-icon="mart"]::after{background-position: -120px 0;}
+            .map-area [data-icon="pharmacy"]::after{background-position: -180px 0;}
+            .map-area [data-icon="park"]::after{background-position: -240px 0;}
+            .map-area [data-icon="current"]::after{background-position: -299px 1px;}
+
+            .map-area [data-icon="current"]{width:60px; height:60px; margin-bottom: 30px;}
+
+            .map-area .active[data-icon]::after{background-position-y: -60px !important;}
+            .map-area .active[data-icon="subway"]::after{background-color:#9ba4e9;}
+            .map-area .active[data-icon="school"]::after{background-color:#70ccd7;}
+            .map-area .active[data-icon="mart"]::after{background-color:#ffae4e;}
+            .map-area .active[data-icon="pharmacy"]::after{background-color:#e397c6;}
+            .map-area .active[data-icon="park"]::after{background-color:#c5c735;}
+
+            .map-around{margin-top:30px;}
+            .map-around-wrap::after{height: 30px; width: 30px; transform: rotate(90deg)translate(2px ,-43px); font-size: 18px;}
+            .map-around input:checked ~ .map-around-wrap::after{transform: rotate(-90deg) translate(-30px ,14px);}   
+
+            .map-icon{width: 46px; height: 46px; overflow: hidden; border-radius: 6px; position: relative; }
+            .map-icon::after{background-size: auto 92px !important;}
+            .map-icon[data-icon="subway"]::after{background-color:#9ba4e9;background-position: 0 -46px;}
+            .map-icon[data-icon="school"]::after{background-color:#70ccd7;background-position: -46px -46px;}
+            .map-icon[data-icon="mart"]::after{background-color:#ffae4e;background-position: -92px -46px;}
+            .map-icon[data-icon="pharmacy"]::after{background-color:#e397c6;background-position: -138px -46px;}
+            .map-icon[data-icon="park"]::after{background-color:#c5c735;background-position: -184px -46px;}
+  
         }
-        @media (min-width:1280px) {
-            .content-wrap.type-map{padding: 60px 0 0;}
-        }
-       
+ 
     </style>
 </head>
 <body>
@@ -78,47 +152,89 @@
     <div class="content-wrap type-map">
         <div class="map-area">
             <div class="map-left">
-                <button type="button" class="btn selected"><span>전체</span></button>
-                <button type="button" class="btn"><span>소규모재건축</span></button>
-                <button type="button" class="btn"><span>모아타운</span></button>
-                <button type="button" class="btn"><span>가로정비</span></button>
-                <button type="button" class="btn primay"><span>분양중</span></button>
+                <div class="map-class">
+                     <button type="button" class="btn active"><span>전체</span></button>
+                    <button type="button" class="btn"><span>소규모재건축</span></button>
+                    <button type="button" class="btn"><span>모아타운</span></button>
+                    <button type="button" class="btn"><span>가로정비</span></button>
+                    <button type="button" class="btn primay"><span>분양중</span></button>
+                </div>
             </div>
 
             <div class="map-right">
-                <input class="a11y-hidden" type="checkbox" id="mapUi_0">
-                <label for="mapUi_0" class="btn current" data-icon="current"><span class="a11y-hidden">현재위치</span></label>
-
-                <input class="a11y-hidden" type="checkbox" id="mapUi_1">
-                <label for="mapUi_1" class="btn gray"><span>위성 지도</span></label>
-                
+                <button type="button" class="btn gray active" aria-label="현재위치" data-icon="current"></button>
+                <button type="button" class="btn gray"><span>위성 지도</span></button>
                 <div class="map-around">
                     <input type="checkbox" class="a11y-hidden" id="mapUi_2">
                     <label for="mapUi_2" class="btn">주변 환경</label>
 
                     <div class="map-around-wrap">
-                        <input type="checkbox" class="a11y-hidden" id="mapAround_1">
-                        <label for="mapAround_1" class="btn"  data-icon="subway"><span class="a11y-hidden">지하철</span></label>
-
-                        <input type="checkbox" class="a11y-hidden" id="mapAround_2">
-                        <label for="mapAround_2" class="btn"  data-icon="school"><span class="a11y-hidden">학교</span></label>
-
-                        <input type="checkbox" class="a11y-hidden" id="mapAround_3">
-                        <label for="mapAround_3" class="btn" data-icon="mart"><span class="a11y-hidden">마트</span></label>
-
-                        <input type="checkbox" class="a11y-hidden" id="mapAround_4">
-                        <label for="mapAround_4" class="btn" data-icon="pharmacy"><span class="a11y-hidden">약국</span></label>
-
-                        <input type="checkbox" id="mapAround_5">
-                        <label for="mapAround_5" class="btn" data-icon="park"><span class="a11y-hidden">공원</span></label>
+                        <button type="button" class="btn active" data-icon="subway" aria-label="지하철"></button>
+                        <button type="button" class="btn" data-icon="school" aria-label="학교"></button>
+                        <button type="button" class="btn active" data-icon="mart" aria-label="마트"></button>
+                        <button type="button" class="btn" data-icon="pharmacy" aria-label="약국"></button>
+                        <button type="button" class="btn" data-icon="park" aria-label="공원"></button>
                     </div>
                 </div>
             </div>
 
-            <button type="button" class="map-">
-                소규모재건축
+            <!-- icon -->
+            <div class="map-icon-point" style="top:110px; left:370px">
+                <div class="map-icon" data-icon="subway" aria-label="지하철"></div>
+            </div>
+            <div class="map-icon-point" style="top:140px; left:430px">
+                <div class="map-icon" data-icon="school" aria-label="학교"></div>
+            </div>
+            <div class="map-icon-point" style="top:170px; left:370px">
+                <div class="map-icon" data-icon="mart" aria-label="마트"></div>
+            </div>
+            <div class="map-icon-point" style="top:200px; left:430px">
+                <div class="map-icon" data-icon="pharmacy" aria-label="약국"></div>
+            </div>
+            <div class="map-icon-point" style="top:230px; left:370px">
+                <div class="map-icon" data-icon="park" aria-label="공원"></div>
             </div>
 
+            <!-- box -->
+            <div class="map-box-point" style="top:140px; left:200px">
+                <div class="map-box ctg1">
+                    <div class="map-box-wrap">소규모재건축</div>
+                </div>
+                <div class="map-info">
+                    <strong>사업명</strong>
+                    <div>주소시 주소동 주소번지 1234</div>
+                </div>
+            </div>
+
+            <div class="map-box-point" style="top:200px; left:240px">
+                <div class="map-box ctg2">
+                    <div class="map-box-wrap">가로정비</div>
+                </div>
+                <div class="map-info">
+                    <strong>사업명</strong>
+                    <div>주소시 주소동 주소번지 1234</div>
+                </div>
+            </div>
+
+            <div class="map-box-point" style="top:260px; left:240px">
+                <div class="map-box ctg3">
+                    <div class="map-box-wrap">모아타운<br>86,728㎡</div>
+                </div>
+                <div class="map-info">
+                    <strong>사업명</strong>
+                    <div>주소시 주소동 주소번지 1234</div>
+                </div>
+            </div>
+
+             <div class="map-box-point" style="top:440px; left:100px">
+                <div class="map-box ctg4">
+                    <div class="map-box-wrap">모아타운<br>분양중</div>
+                </div>
+                <div class="map-info">
+                    <strong>사업명</strong>
+                    <div>주소시 주소동 주소번지 1234</div>
+                </div>
+            </div>
 
         </div>
     </div>

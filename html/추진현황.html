@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+    <style>
+        .a11y-hidden{overflow: hidden; position: absolute !important; clip: rect(0, 0, 0, 0); clip-path: circle(0); width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; top:0 !important; }
+        .content-wrap.type-map{display: flex; width: 100%; padding: 48px 0 0;}
+        .map-area{position: relative; width:100%;  background-color: #fff;}
+
+        .map-left{position: fixed; top:70px; left:18px; width: 80px;}
+        .map-right{position: fixed; top:70px; right:18px; width: 42px;}
+        .map-area .btn{width: 100%; border:1px solid #b4b4b4; border-radius: 4px; background-color: #fff; padding: 0; word-break: keep-all; line-height: 1.2; display: flex; align-items: center; justify-content: center; padding: 12px 0 10px; text-align: center; cursor: pointer; font-weight: 700; position: relative; overflow: hidden;}
+        .map-area .btn.selected{background-color: #bec033; color:#fff;}
+        .map-area label.btn{padding: 9px 0 7px; }
+        .map-area .btn.primay{color: #ff0000;}
+        .map-area .btn + .btn{margin-top: 5px;}
+
+        .map-area .btn.current{width:42px; height:42px; background:#626262; border-radius: 50%; border:0; margin-bottom: 16px;}
+        .map-area .btn.gray{background:#626262; border:0; color:#fff;}
+        .map-area :checked + .btn.current,
+        .map-area :checked + .btn.gray{background:#ff0000; border:0; color:#fff;}
+
+        .map-around input{opacity: 0; display: inline-block;position: absolute;z-index: -1;vertical-align: top;appearance: none;-moz-appearance: none;-webkit-appearance: none;margin: 0;}
+        .map-around input:checked + label.btn{background-color: #626262; color:#fff;}
+        .map-around label.btn{padding:5px 0 3px; border:0;}
+        .map-around {position: relative; width: 100%; background-color: #626262; padding: 2px; margin-top: 6px; border-radius: 4px;}
+        
+        .map-around input:checked ~ .map-around-wrap{margin-top:5px}
+        .map-around-wrap::after{content: ">"; display: block; height: 20px; width: 20px; transform: rotate(90deg) translate(7px ,-26px); color: #fff; transform-origin: 0 0;}
+        .map-around .map-around-wrap .btn{display: none; padding:0 0 100%; line-height: 0; border: 0;}
+        .map-around input:checked ~ .map-around-wrap .btn{display: block;}
+        .map-around input:checked ~ .map-around-wrap::after{transform: rotate(-90deg) translate(-15px ,12px);}
+        .map-around-wrap .btn{margin-top: 2px;}
+
+        [data-icon]::after{content:""; display:block; position: absolute; top:0; left:0;}
+        .map-area [data-icon]::after{width:100%; height: 100%; background-image: url(../assets/images/map/sp_map.png); background-repeat: no-repeat; background-size: auto 76px;}
+        .map-area [data-icon="subway"]::after{background-position: 0 1px;}
+        .map-area [data-icon="school"]::after{background-position: -37px 1px;}
+        .map-area [data-icon="mart"]::after{background-position: -75px 1px;}
+        .map-area [data-icon="pharmacy"]::after{background-position: -113px 1px;}
+        .map-area [data-icon="park"]::after{background-position: -151px 1px;}
+        .map-area [data-icon="current"]::after{background-position: -187px 3px;}
+
+
+
+        .map-around :checked + [data-icon="subway"]::after{background-color:#9ba4e9;background-position: 0 -37px;}
+        .map-around :checked + [data-icon="school"]::after{background-color:#70ccd7;background-position: -37px -37px;}
+        .map-around :checked + [data-icon="mart"]::after{background-color:#ffae4e;background-position: -75px -37px;}
+        .map-around :checked + [data-icon="pharmacy"]::after{background-color:#e397c6;background-position: -113px -37px;}
+        .map-around :checked + [data-icon="park"]::after{background-color:#c5c735;background-position: -151px -37px;}
+
+        @media (min-width:1024px) {
+            .content-wrap.type-map{padding: 60px 0 0;}
+        }
+        @media (min-width:1280px) {
+            .content-wrap.type-map{padding: 60px 0 0;}
+        }
+       
+    </style>
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap type-map">
+        <div class="map-area">
+            <div class="map-left">
+                <button type="button" class="btn selected"><span>전체</span></button>
+                <button type="button" class="btn"><span>소규모재건축</span></button>
+                <button type="button" class="btn"><span>모아타운</span></button>
+                <button type="button" class="btn"><span>가로정비</span></button>
+                <button type="button" class="btn primay"><span>분양중</span></button>
+            </div>
+
+            <div class="map-right">
+                <input class="a11y-hidden" type="checkbox" id="mapUi_0">
+                <label for="mapUi_0" class="btn current" data-icon="current"><span class="a11y-hidden">현재위치</span></label>
+
+                <input class="a11y-hidden" type="checkbox" id="mapUi_1">
+                <label for="mapUi_1" class="btn gray"><span>위성 지도</span></label>
+                
+                <div class="map-around">
+                    <input type="checkbox" class="a11y-hidden" id="mapUi_2">
+                    <label for="mapUi_2" class="btn">주변 환경</label>
+
+                    <div class="map-around-wrap">
+                        <input type="checkbox" class="a11y-hidden" id="mapAround_1">
+                        <label for="mapAround_1" class="btn"  data-icon="subway"><span class="a11y-hidden">지하철</span></label>
+
+                        <input type="checkbox" class="a11y-hidden" id="mapAround_2">
+                        <label for="mapAround_2" class="btn"  data-icon="school"><span class="a11y-hidden">학교</span></label>
+
+                        <input type="checkbox" class="a11y-hidden" id="mapAround_3">
+                        <label for="mapAround_3" class="btn" data-icon="mart"><span class="a11y-hidden">마트</span></label>
+
+                        <input type="checkbox" class="a11y-hidden" id="mapAround_4">
+                        <label for="mapAround_4" class="btn" data-icon="pharmacy"><span class="a11y-hidden">약국</span></label>
+
+                        <input type="checkbox" id="mapAround_5">
+                        <label for="mapAround_5" class="btn" data-icon="park"><span class="a11y-hidden">공원</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="map-">
+                소규모재건축
+            </div>
+
+
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+<script type="text/javascript">
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

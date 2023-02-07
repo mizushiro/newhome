@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="join-form-area">
+            <h2 class="join-form-title">분양대행의뢰</h2>
+            <p class="join-desc">※ 입력하신 휴대전화로 상담이 진행되오니 통화가 가능한 연락처 를 입력해 주세요.</p>
+            <p class="join-requisite"><span class="requisite">*</span> 필수입력사항</p>
+            <div class="join-form-section">
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 이름</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title">직급</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 휴대전화</dt>
+                    <dd class="form-content">
+                        <input type="text" class="input-basic">
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 주소</dt>
+                    <dd class="form-content">
+                        <div class="form-group post">
+                            <input type="text" class="input-basic">
+                            <button type="button" class="btn-basic-a">주소검색</button>
+                        </div>
+                        <div class="form-group address">
+                            <input type="text" class="input-basic">
+                            <input type="text" class="input-basic">
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="form-row">
+                    <dt class="form-title"><span class="requisite">*</span> 문의 내용</dt>
+                    <dd class="form-content">
+                        <textarea name="" id="" cols="30" rows="10" class="textarea-basic"></textarea>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="join-agree-section">
+                <div class="join-agree-group">
+                    <div class="join-agree-row">
+                        <div class="join-agree-col">
+                            <span class="box-checkbox-a">
+                                <input type="checkbox" id="agree3" class="form-checkbox" />
+                                <label for="agree3"><span class="requisite">[필수]</span> <a href="">개인정보 수집·이용 동의</a></label>
+                            </span>
+                        </div>
+                        <a href="" class="link-detail-view">보기 ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" class="btn-basic-b">문의완료</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="my-info">
+            <div class="my-img">
+                <img src="https://via.placeholder.com/200">
+                <input type="file" class="btn-file">
+                <div class="photo-icon"><i class="ic-photo"></i></div>
+            </div>
+        </div>
+
+        <div class="my-data-list">
+            <div class="my-data-item">
+                <input type="text" class="input-type-a" value="이름">
+                <button type="button" class="btn-change">변경</button>
+            </div>
+            <div class="my-data-item">
+                <p class="my-data-text">eroompt@gmail.com</p>
+                <div class="join-type naver"><i class="ic-join-naver"></i></div>
+                <!--
+                <div class="join-type kakao"><i class="ic-join-kakao"></i></div>
+                <div class="join-type join-1"><i class="ic-join-logo"></i></div>
+                <div class="join-type join-2"><i class="ic-join-logo"></i></div>
+                -->
+            </div>
+            <div class="my-data-item">
+                <p class="my-data-text">010-1234-5678</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.main-banner', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

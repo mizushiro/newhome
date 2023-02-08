@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="product-detail-wrap">
+            <div class="top-sticky-area">
+                <div class="top-sticky-box">
+                    <div class="top-sticky-title">
+                        <button type="button" class="btn-interest active"><i class="ic-interest"></i><span class="for-a11y">관심상품</span></button>
+                        <span class="notice active">분양알림</span>
+                        <p class="production-name">한강스테이</p>
+                    </div>
+                    <div class="top-sticky-tab">
+                        <button type="button" class="btn-stick-item active">사업안내</button>
+                        <button type="button" class="btn-stick-item">분양안내</button>
+                        <button type="button" class="btn-stick-item">시세분석</button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section-group">
+                <div class="product-detail-section">
+                </div>
+                <div class="product-detail-section">
+                    <h2 class="product-detail-title">위치도</h2>
+                    <div class="detail-map">
+                        <div class="map-area">
+                            <div class="map-right">
+                                <div class="map-around">
+                                    <input type="checkbox" class="a11y-hidden" id="mapUi_2">
+                                    <label for="mapUi_2" class="btn">주변 환경</label>
+
+                                    <div class="map-around-wrap">
+                                        <button type="button" class="btn active" data-icon="subway" aria-label="지하철"></button>
+                                        <button type="button" class="btn" data-icon="school" aria-label="학교"></button>
+                                        <button type="button" class="btn active" data-icon="mart" aria-label="마트"></button>
+                                        <button type="button" class="btn" data-icon="pharmacy" aria-label="약국"></button>
+                                        <button type="button" class="btn" data-icon="park" aria-label="공원"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-detail-section">
+                    <h2 class="product-detail-title">특장점</h2>
+                    <div class="product-detail-img">
+                        <img src="../assets/images/temp/@detail1.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="product-detail-section">
+                    <h2 class="product-detail-title">평면도</h2>
+                    <div class="product-detail-img">
+                        <img src="../assets/images/temp/@detail2 .jpg" alt="">
+                        <button type="button" class="btn-preview"><i class="ic-preview"></i><span class="for-a11y">확대보기</span></button>
+                    </div>
+                </div>
+
+                <div class="product-detail-section">
+                    <h2 class="product-detail-title">배치도</h2>
+                    <div class="product-detail-img">
+                        <img src="../assets/images/temp/@detail3.jpg" alt="">
+                        <button type="button" class="btn-preview"><i class="ic-preview"></i><span class="for-a11y">확대보기</span></button>
+                    </div>
+                </div>
+
+                <div class="product-detail-section">
+                    <h2 class="product-detail-title">동·호수표</h2>
+                    <div class="product-detail-img">
+                        <img src="../assets/images/temp/@detail4.jpg" alt="">
+                        <button type="button" class="btn-preview"><i class="ic-preview"></i><span class="for-a11y">확대보기</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-group">
+                <div class="product-detail-section">
+                    <h2 class="product-detail-title">분양가 및 분양일정</h2>
+                    <div class="product-detail-img">
+                        <img src="../assets/images/temp/@detail5.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <div class="main-banner-wrap">
+                <div class="main-banner">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../assets/images/temp/@banner.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/images/temp/@banner.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../assets/images/temp/@banner.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+	window.onload = function() {
+        var swiper = new Swiper('.main-banner', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

@@ -120,7 +120,7 @@ html.scroll_off {overflow:hidden}
 .clamp-b {overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:break-all}
 
 /* layout */
-.base-wrap {display:flex;flex-direction:column;min-height:100%;overflow-x:hidden}
+.base-wrap {display:flex;flex-direction:column;min-height:100%}
 .content-wrap {flex:1 auto;padding:48px 16px;position:relative}
 @media (min-width:1024px) {
     .content-wrap {padding:60px 48px}
@@ -139,6 +139,8 @@ html.scroll_off {overflow:hidden}
     .header {height:60px}
     .header-nav {display:flex;align-items:center;gap:36px;margin-left:20px}
     .header-nav .link-nav-item {font-size:14px;color:#000;font-weight:700;position:relative}
+    .header-nav .link-nav-item.active {font-weight:800}
+    .header-nav .link-nav-item.active:after {content:'';position:absolute;top:-6px;width:4px;height:4px;border-radius:50%;background-color:#000;margin-left:-2px;left:50%}
     .header-nav .link-nav-item ~ .link-nav-item:before {content:'';position:absolute;left:-16px;width:1px;height:12px;background-color:#666;top:50%;margin-top:-6px}
 }
 
@@ -214,6 +216,7 @@ html.scroll_off {overflow:hidden}
 .ic-nav-2 {background-image:url("../../images/common/ic-nav2.png")}
 .ic-nav-3 {background-image:url("../../images/common/ic-nav3.png")}
 .ic-nav-4 {background-image:url("../../images/common/ic-nav4.png")}
+.ic-preview {width:20px;height:20px;background:url("../../images/common/ic-preview.png") no-repeat 50% 50%;background-size:contain}
 @media (min-width:1024px) {
     [class^="ic-main-"] {width:36px}
     .top-icon {height:24px}
@@ -223,6 +226,7 @@ html.scroll_off {overflow:hidden}
     [class^="ic-my-menu"] {width:20px}
     .ic-interest {width:20px}
     .ic-arrow {height:10px}
+    .ic-preview {width:24px;height:24px}
 }
 @media (min-width:1280px) {
     [class^="ic-main-"] {width:100%;height:68px}
@@ -300,20 +304,20 @@ html.scroll_off {overflow:hidden}
 
 .m-map-box {border:1px solid #ccc;border-radius:4px;overflow:hidden;height:260px;position:relative;margin-top:10px}
 .m-map-box .circle-item {background-color:#c5c735;font-size:20px;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;position:absolute;border-radius:50%}
-.main-banner  {margin:40px -16px 24px;position:relative}
+.main-banner-wrap {margin:40px -16px 24px;overflow:hidden;padding-bottom:24px}
+.main-banner  {position:relative}
 .main-banner .swiper-slide img {width:100%}
 .main-banner .swiper-pagination {bottom:-24px}
 .main-banner .swiper-pagination-bullet {background-color:#c5c74d;opacity:.5}
 .main-banner .swiper-pagination-bullet-active {opacity:1}
 @media (min-width:1024px) {
     .m-map-box {margin-top:32px;height:620px}
-    .main-banner {margin:80px -48px 40px}
+    .main-banner-wrap {margin:80px -48px 40px;padding-bottom:40px}
     .main-banner .swiper-pagination {bottom:-40px}
     .main-banner .swiper-pagination-bullet {width:12px;height:12px;margin:0 8px !important;}
 }
 @media (min-width:1280px) {
-    .main-banner {margin:80px 0 40px}
-    .content-wrap {overflow-x:hidden}
+    .main-banner-wrap {margin:80px 0 40px}
 }
 
 /* 회원가입 */
@@ -687,4 +691,49 @@ html.scroll_off {overflow:hidden}
 }
 @media (min-width:1280px) {
     .alarm-area {margin-left:48px}
+}
+
+/* 상세 */
+.top-sticky-area {position:sticky;top:48px;background-color:#fff;z-index:5;padding:16px 16px 0;margin:0 -16px}
+.top-sticky-box {display:flex;flex-direction:column}
+.top-sticky-box .top-sticky-title {display:flex;border:1px solid #ccc;min-height:32px;width:100%}
+.top-sticky-box .top-sticky-title .btn-interest {width:32px;border-right:1px solid #ccc}
+.top-sticky-box .top-sticky-title .notice {min-height:inherit;padding:0 8px;color:#b8b8b8;display:flex;align-items:center;border-right:1px solid #ccc;font-size:12px;font-weight:800}
+.top-sticky-box .top-sticky-title .notice.active {background-color:#fff100;color:#000}
+.top-sticky-box .top-sticky-title .production-name {display:flex;align-items:center;padding:4px 8px;font-size:12px;color:#000;font-weight:800}
+.top-sticky-box .top-sticky-tab {display:flex;width:100%}
+.top-sticky-box .top-sticky-tab .btn-stick-item {flex:1;height:36px;display:flex;align-items:center;justify-content:center;color:#949494;font-size:13px;background-color:#f5f6f7}
+.top-sticky-box .top-sticky-tab .btn-stick-item.active {background-color:#c5c735;color:#fff}
+@media (min-width:1024px) {
+    .top-sticky-area {top:60px;padding:36px 48px 0;margin:0 -48px}
+    .top-sticky-box {flex-direction:row;border:1px solid #ccc}
+    .top-sticky-box .top-sticky-title {flex:1 auto;border:none}
+    .top-sticky-box .top-sticky-tab {width:auto;flex-shrink:0}
+    .top-sticky-box .top-sticky-tab .btn-stick-item {padding:0 20px;height:100%;font-size:14px}
+    .top-sticky-box .top-sticky-title {min-height:40px}
+    .top-sticky-box .top-sticky-title .btn-interest {width:40px}
+    .top-sticky-box .top-sticky-title .notice {padding:0 12px;font-size:14px}
+    .top-sticky-box .top-sticky-title .production-name {padding:8px 12px;font-size:14px}
+}
+@media (min-width:1280px) {
+    .top-sticky-area {padding:36px 48px 0}
+}
+
+.product-detail-section ~ .product-detail-section {margin-top:40px}
+.product-detail-title {font-size:16px;font-weight:800;color:#000}
+.product-detail-img {display:flex;justify-content:center;margin-top:20px;position:relative}
+.product-detail-img img {max-width:100%;vertical-align:top}
+.product-detail-img .btn-preview {position:absolute;right:0;bottom:0;width:32px;height:32px;background-color:rgba(0,0,0,.5);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.detail-map {margin:16px -16px 0;height:300px}
+.detail-map .map-area {height:100%;z-index:2}
+.detail-map .map-area .map-right {position:absolute;top:10px}
+
+@media (min-width:1024px) {
+    .product-detail-section ~ .product-detail-section {margin-top:60px}
+    .product-detail-title {font-size:24px}
+    .product-detail-img .btn-preview {width:40px;height:40px}
+    .detail-map {margin:24px -48px 0;height:520px}
+}
+@media (min-width:1280px) {
+    .detail-map {margin:24px 0 0}
 }

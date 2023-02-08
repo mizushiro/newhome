@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>새집투어</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="keywords" content="새집투어"/>
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+
+    <script src="../assets/js/common.ui.js"></script>
+    <link rel="stylesheet" href="../assets/styles/css/swiper.css">
+    <link rel="stylesheet" href="../assets/styles/css/ui.newhome.css">
+</head>
+<body>
+<div class="base-wrap">
+    <header class="header">
+        header 영역
+    </header>
+    <div class="content-wrap">
+        <div class="alarm-area">
+            <h2 class="alarm-title"><i class="ic-nav-3"></i>전체 분양알림 목록</h2>
+        </div>
+
+        <div class="my-data-list">
+            <div class="my-data-item">
+                <div class="interest-box"><i class="ic-interest"></i></div>
+                <p class="data-desc">한강스테이 분양가가 등록되었습니다.</p>
+            </div>
+            <div class="my-data-item">
+                <p class="data-desc">한강스테이 분양가가 등록되었습니다.</p>
+            </div>
+            <div class="my-data-item">
+                <div class="yellow-box">분양알림</div>
+                <p class="data-desc">한강스테이 분양가가 등록되었습니다.</p>
+            </div>
+        </div>
+
+        <div class="main-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../assets/images/temp/@banner.jpg" alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <button type="button" class="btn-leave">탈퇴</button>
+    </div>
+    <footer class="footer">
+        footer 영역
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.main-banner', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+	window.onload = function() {
+        newhome.callLayer();
+		tollTipLayer();
+	};
+</script>
+</body>
+</html>

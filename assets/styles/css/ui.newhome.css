@@ -431,7 +431,7 @@ html.scroll_off {overflow:hidden}
 .push-title {font-size:14px}
 
 .my-data-list {border-top:2px solid #000;margin-top:20px}
-.my-data-item {display:flex;height:48px;position:relative;gap:8px;border-bottom:1px solid #b4b4b4;align-items:center}
+.my-data-item {display:flex;min-height:48px;position:relative;gap:8px;border-bottom:1px solid #b4b4b4;align-items:center;padding:4px 0}
 .my-data-text {font-size:12px;color:#aaa}
 .btn-change {flex-shrink:0;margin-left:8px;color:#1e00ff;text-decoration:underline;font-size:12px}
 
@@ -464,7 +464,7 @@ html.scroll_off {overflow:hidden}
     .push-title {font-size:16px}
 
     .my-data-list {margin-top:40px}
-    .my-data-item {height:60px}
+    .my-data-item {min-height:60px;padding:8px 0}
     .btn-change,
     .my-data-text {font-size:16px}
 }
@@ -667,5 +667,24 @@ html.scroll_off {overflow:hidden}
     .map-icon[data-icon="mart"]::after{background-color:#ffae4e;background-position: -92px -46px;}
     .map-icon[data-icon="pharmacy"]::after{background-color:#e397c6;background-position: -138px -46px;}
     .map-icon[data-icon="park"]::after{background-color:#c5c735;background-position: -184px -46px;}
+}
 
+/* 알림 목록 */
+.alarm-area {margin-top:28px}
+.alarm-area .alarm-title {font-size:16px;font-weight:700;color:#000;display:flex;align-items:center;gap:8px}
+.alarm-area .alarm-title i {width:20px}
+.my-data-item .interest-box {width:30px;flex-shrink:0;display:flex;height:30px;align-items:center;justify-content:center}
+.my-data-item .ic-interest {background-image:url("../../images/common/ic-interest-active.png")}
+.my-data-item .data-desc {font-size:13px;color:#000}
+.my-data-item .yellow-box {border:1px solid #ccc;background-color:#fff100;height:32px;padding:0 8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;color:#000}
+@media (min-width:1024px) {
+    .alarm-area {margin-top:40px;margin-bottom:-16px}
+    .alarm-area .alarm-title {font-size:20px}
+    .alarm-area .alarm-title i {width:24px;height:24px}
+    .my-data-item .interest-box {width:40px;height:40px}
+    .my-data-item .data-desc {font-size:16px}
+    .my-data-item .yellow-box {height:48px;font-size:16px;padding:0 12px}
+}
+@media (min-width:1280px) {
+    .alarm-area {margin-left:48px}
 }

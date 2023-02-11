@@ -30,15 +30,15 @@
                         <p class="production-name">한강스테이</p>
                     </div>
                     <div class="top-sticky-tab">
-                        <button type="button" class="btn-stick-item active">사업안내</button>
-                        <button type="button" class="btn-stick-item">분양안내</button>
-                        <button type="button" class="btn-stick-item">시세분석</button>
+                        <button type="button" class="btn-stick-item active" data-tab="사업안내">사업안내</button>
+                        <button type="button" class="btn-stick-item" data-tab="분양안내">분양안내</button>
+                        <button type="button" class="btn-stick-item" data-tab="시세분석">시세분석</button>
                     </div>
                 </div>
             </div>
 
             <section class="section-group">
-                <div class="product-detail-section">
+                <div class="product-detail-section" data-tabname="사업안내">
                     <div class="product-detail-summary">
                         <div class="product-detail-summary-img">
                             <div class="detail-img">
@@ -188,7 +188,7 @@
                 </div>
             </section>
 
-            <section class="section-group">
+            <section class="section-group" data-tabname="분양안내">
                 <div class="product-detail-section">
                     <h2 class="product-detail-title">분양가 및 분양일정</h2>
                     <div class="product-detail-img">
@@ -202,7 +202,7 @@
                 </div>
             </section>
 
-            <section class="section-group">
+            <section class="section-group" data-tabname="시세분석">
                 <div class="product-detail-section">
                     <div class="product-title-box">
                         <h2 class="product-detail-title">시세분석</h2>
@@ -443,6 +443,9 @@
 
         newhome.callLayer();
 		tollTipLayer();
+
+        newHomeUI.tabScroll();
+        newHomeUI.layerEdit();
 	};
 </script>
 </body>

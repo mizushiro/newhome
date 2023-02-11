@@ -39,11 +39,91 @@
 
             <section class="section-group">
                 <div class="product-detail-section">
+                    <div class="product-detail-summary">
+                        <div class="product-detail-summary-img">
+                            <div class="detail-img">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../assets/images/temp/@detail-top.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../assets/images/temp/@detail-top.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../assets/images/temp/@detail-top.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="product-detail-summary-info">
+                            <div class="product-title-box">
+                                <h2 class="product-detail-title">분양정보</h2>
+                                <div class="r-box">
+                                    <button type="button" class="btn-change-unit"><i class="ic-change"></i>평</button>
+                                </div>
+                            </div>
+                            <div class="product-info-list">
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">사업명</dt>
+                                    <dd class="product-info-data">한강스테이</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">주소</dt>
+                                    <dd class="product-info-data">서울 강서구 마곡중앙로 36</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">사업분류</dt>
+                                    <dd class="product-info-data">소규모재건축</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">규모</dt>
+                                    <dd class="product-info-data">지하2층~지상7층 / 1개동</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">분양타입</dt>
+                                    <dd class="product-info-data">29㎡·59㎡</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">총세대수</dt>
+                                    <dd class="product-info-data">90세대</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">일반분양</dt>
+                                    <dd class="product-info-data">아파트13세대·근린생활시설2호</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">시행사</dt>
+                                    <dd class="product-info-data">동원주택가로주택정비사업조합</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">시공사</dt>
+                                    <dd class="product-info-data">(주)신일</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">입주예정</dt>
+                                    <dd class="product-info-data">2023.05</dd>
+                                </dl>
+                                <dl class="product-info-item">
+                                    <dt class="product-info-title">분양문의</dt>
+                                    <dd class="product-info-data">02-111-1111</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="product-detail-section">
                     <h2 class="product-detail-title">위치도</h2>
+                    <div class="product-info-list">
+                        <dl class="product-info-item">
+                            <dt class="product-info-title">주소</dt>
+                            <dd class="product-info-data">서울 강서구 마곡중앙로 36</dd>
+                        </dl>
+                    </div>
                     <div class="detail-map">
                         <div class="map-area">
+                            <span class="my-place" style="top:100px;left:100px"><i class="ic-place"></i></span>
                             <div class="map-right">
                                 <div class="map-around">
                                     <input type="checkbox" class="a11y-hidden" id="mapUi_2">
@@ -69,11 +149,25 @@
                     </div>
                 </div>
 
-                <div class="product-detail-section">
+                <div class="product-detail-section box-tab">
                     <h2 class="product-detail-title">평면도</h2>
-                    <div class="product-detail-img">
-                        <img src="../assets/images/temp/@detail2 .jpg" alt="">
-                        <button type="button" class="btn-preview"><i class="ic-preview"></i><span class="for-a11y">확대보기</span></button>
+                    <div class="tab-area">
+                        <ul class="list-tab">
+                            <li class="list-item-tab"><button type="button" class="list-item-btn" name="#view1-a">29㎡</button></li>
+                            <li class="list-item-tab"><button type="button" class="list-item-btn" name="#view1-b">59㎡</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="view1-a">
+                        <div class="product-detail-img">
+                            <img src="../assets/images/temp/@detail2.jpg" alt="">
+                            <button type="button" class="btn-preview"><i class="ic-preview"></i><span class="for-a11y">확대보기</span></button>
+                        </div>
+                    </div>
+                    <div class="tab-contents" id="view1-b">
+                        <div class="product-detail-img">
+                            <img src="../assets/images/temp/@detail2.jpg" alt="">
+                            <button type="button" class="btn-preview"><i class="ic-preview"></i><span class="for-a11y">확대보기</span></button>
+                        </div>
                     </div>
                 </div>
 
@@ -99,6 +193,80 @@
                     <h2 class="product-detail-title">분양가 및 분양일정</h2>
                     <div class="product-detail-img">
                         <img src="../assets/images/temp/@detail5.jpg" alt="">
+                        <div class="login-load">
+                            <div class="login-load-img"><img src="../assets/images/common/login-load.jpg" alt=""></div>
+                            <p class="login-load-desc">로그인 하시면 <br>분양가를 확인할 수 있습니다. </p>
+                            <button type="button" class="btn-login-load">간편 로그인</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-group">
+                <div class="product-detail-section">
+                    <div class="product-title-box">
+                        <h2 class="product-detail-title">시세분석</h2>
+                        <div class="r-box">
+                            <p class="product-detail-desc">시세 대비 분양가 등급</p>
+                            <button type="button" class="btn-help">?</button>
+                        </div>
+                    </div>
+                    <div class="box-level">
+                        <p class="level-title">종합평가</p>
+                        <div class="level-img">
+                            <img src="../assets/images/common/level-1.jpg" alt="1등급">
+                            <!--
+                            <img src="../assets/images/common/level-2.jpg" alt="2등급">
+                            <img src="../assets/images/common/level-3.jpg" alt="3등급">
+                            <img src="../assets/images/common/level-4.jpg" alt="4등급">
+                            <img src="../assets/images/common/level-5.jpg" alt="5등급">
+                            -->
+                        </div>
+                    </div>
+                    <div class="box-level-b">
+                        <div class="box-level-item">
+                            <p class="box-level-title">지역내 소규모브랜드(200세대 이하) 실거래 평당가 </p>
+                            <div class="level-img2">
+                                <img src="../assets/images/common/level2-1.jpg" alt="1등급">
+                            </div>
+                            <p class="level-chart-title">[단위: 천원, 2022.11기준]</p>
+                            <div class="level-chart-box">
+
+                            </div>
+                        </div>
+
+                        <div class="box-level-item">
+                            <p class="box-level-title">지역내 브랜드 대단지 실거래 평당가 </p>
+                            <div class="level-img2">
+                                <img src="../assets/images/common/level2-4.jpg" alt="4등급">
+                            </div>
+                            <p class="level-chart-title">[단위: 천원, 2022.11기준]</p>
+                            <div class="level-chart-box">
+
+                            </div>
+                        </div>
+
+                        <div class="box-level-item">
+                            <p class="box-level-title">지역내 신축 소규모 아파트 평당가</p>
+                            <div class="level-img2">
+                                <img src="../assets/images/common/level2-2.jpg" alt="1등급">
+                            </div>
+                            <p class="level-chart-title">[단위: 천원, 2022.11기준]</p>
+                            <div class="level-chart-box">
+
+                            </div>
+                        </div>
+
+                        <div class="box-level-item">
+                            <p class="box-level-title">주거환경 평가</p>
+                            <div class="level-img2">
+                                <img src="../assets/images/common/level2-3.jpg" alt="3등급">
+                            </div>
+                            <div class="level-chart-box">
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -121,6 +289,55 @@
                 </div>
             </div>
 
+            <div class="talk-box">
+                <h2 class="product-detail-title">새집톡</h2>
+                <div class="talk-list">
+                    <div class="talk-item">
+                        <div class="talk-img">
+                            <img src="https://via.placeholder.com/200" alt="" />
+                        </div>
+                        <div class="talk-content">
+                            <input type="text" class="input-type-b" placeholder="댓글 남기기" />
+                            <div class="btn-box">
+                                <button type="button" class="btn-cancel">취소</button>
+                                <button type="button" class="btn-replay">댓글</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="talk-item">
+                        <div class="talk-img">
+                            <img src="https://via.placeholder.com/200" alt="" />
+                        </div>
+                        <div class="talk-content">
+                            <div class="writer-box">
+                                <p class="writer-info"><span class="name">새집투어</span><span class="data">2023.02.01</span></p>
+                            </div>
+                            <p class="writer-desc">주변 인프라가 잘 갖추어져 있어 살기 좋아요</p>
+                        </div>
+                    </div>
+
+                    <div class="talk-item">
+                        <div class="talk-img">
+                            <img src="https://via.placeholder.com/200" alt="" />
+                        </div>
+                        <div class="talk-content">
+                            <div class="writer-box">
+                                <p class="writer-info"><span class="name">새집투어</span><span class="data">2023.02.01</span></p>
+                                <div class="r-box active">
+                                    <button type="button" class="btn-edit"><i class="ic-edit"></i></button>
+                                    <div class="edit-box">
+                                        <button type="button" class="btn-edit-item"><i class="ic-modify"></i>수정</button>
+                                        <button type="button" class="btn-edit-item"><i class="ic-del"></i>삭제</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="text" class="input-type-b" placeholder="댓글 남기기" value="주변 인프라가 잘 갖추어져 있어 살기 좋아요" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <footer class="footer">
@@ -135,6 +352,16 @@
             spaceBetween: 0,
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        var swiper2 = new Swiper('.detail-img', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: '.swiper-pagination',
+                type: "fraction",
                 clickable: true,
             },
         });

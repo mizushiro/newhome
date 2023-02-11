@@ -226,6 +226,7 @@ html.scroll_off {overflow:hidden}
 .ic-modify {display:block;width:12px;height:12px;background:url("../../images/common/ic-modify.png") no-repeat 50% 50%;background-size:contain}
 .ic-del {display:block;width:12px;height:12px;background:url("../../images/common/ic-del.png") no-repeat 50% 50%;background-size:contain}
 .ic-close {display:block;width:14px;height:14px;background:url("../../images/common/ic-close.png") no-repeat 50% 50%;background-size:contain}
+.ic-movie {display:block;width:100px;height:60px;background:url("../../images/common/ic-uploade.png") no-repeat 50% 50%;background-size:contain}
 @media (min-width:1024px) {
     [class^="ic-main-"] {width:36px}
     .top-icon {height:24px}
@@ -240,6 +241,7 @@ html.scroll_off {overflow:hidden}
     .ic-edit {width:30px;height:16px}
     .ic-modify,
     .ic-del {width:16px;height:16px}
+    .ic-movie {width:200px;height:100px}
 }
 @media (min-width:1280px) {
     [class^="ic-main-"] {width:100%;height:68px}
@@ -805,6 +807,30 @@ html.scroll_off {overflow:hidden}
 .talk-item .edit-box {position:absolute;top:100%;right:0;border:1px solid #ccc;background-color:#fff;padding:8px 0;border-radius:4px;display:none}
 .talk-item .edit-box .btn-edit-item {display:flex;white-space:nowrap;padding:0 8px;font-size:12px;height:24px;align-items:center;gap:8px}
 
+.movie-area {aspect-ratio:16/9;margin-top:20px}
+.movie-area iframe {width:100%;height:100%;object-fit:contain}
+.movie-area.no-data {background-color:#c9c1b6;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}
+.movie-area .upload-desc {font-size:14px;line-height:1.5;color:#000;font-weight:700;text-align:center}
+.movie-area .upload-txt {display:inline-flex;background-color:#000;color:#fff;padding:4px;align-items:center;gap:4px;line-height:1}
+.movie-area .ic-help {width:16px;height:16px;border:1px solid #fff;border-radius:50%;line-height:1;display:flex;align-items:center;justify-content:center;font-size:12px}
+
+.level-data-group {margin-top:24px;display:flex;flex-direction:column;gap:8px;padding:8px}
+.line-notice {margin:32px -16px 0;padding:8px;background-color:#f5f6f7}
+.line-notice .line-notice-desc {font-size:13px;color:#7f7f7f;text-align:center}
+.line-notice .line-notice-desc span {color:#ff0000}
+
+.status-step {display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.status-step-item {display:flex;align-items:center;gap:8px;position:relative}
+.status-step-item .number {width:24px;height:24px;border-radius:50%;position:relative;background-color:#626262;font-size:14px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;z-index:2}
+.status-step-item .status-step-data {display:flex;align-items:center;flex:1;color:#7f7f7f}
+.status-step-item .status-step-title {font-size:12px}
+.status-step-item .status-step-time {margin-left:auto;font-size:13px}
+.status-step-item .status-step-time .year {margin-left:4px}
+.status-step-item.active .number {background-color:#c5c736}
+.status-step-item.active .status-step-data {color:#000}
+.status-step-item.active .status-step-title {font-weight:700}
+.status-step-item ~ .status-step-item:before {content:'';position:absolute;left:12px;top:-12px;bottom:0;width:1px;background-color:#ccc}
+
 @media (min-width:768px) {
     .box-level-b {flex-direction:row;flex-wrap:wrap}
     .box-level-item {width:calc((100% - 8px) / 2)}
@@ -849,6 +875,21 @@ html.scroll_off {overflow:hidden}
     .talk-item .btn-replay,
     .talk-item .btn-cancel {font-size:14px;height:28px;padding:0 12px}
     .talk-item .edit-box .btn-edit-item {padding:0 12px;height:28px;font-size:14px}
+
+    .movie-area .upload-desc {font-size:24px}
+    .movie-area .upload-txt {padding:8px}
+    .movie-area .ic-help {width:24px;height:24px;font-size:16px}
+
+    .line-notice {margin:48px -48px 0;padding:12px}
+    .line-notice .line-notice-desc {font-size:16px}
+
+    .status-step {flex-direction:row;gap:0;margin-top:60px}
+    .status-step-item {flex:1;flex-direction:column;gap:36px}
+    .status-step-item .number {width:40px;height:40px;font-size:18px}
+    .status-step-item .status-step-data {flex-direction:column;gap:12px}
+    .status-step-item .status-step-time {margin-left:0;font-size:16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}
+    .status-step-item .status-step-title {font-size:16px}
+    .status-step-item ~ .status-step-item:before {left:-50%;top:20px;bottom:auto;right:50%;height:1px;width:auto}
 }
 @media (min-width:1280px) {
     .detail-map {margin:24px 0 0}
@@ -856,6 +897,7 @@ html.scroll_off {overflow:hidden}
 
     .product-info-list {margin-top:32px;gap:16px}
     .product-info-data {font-size:16px}
+    .line-notice {margin:32px 0 0}
 }
 
 /* layer */
@@ -871,11 +913,16 @@ html.scroll_off {overflow:hidden}
 .layer_section .layer-content-btn-box {display:flex;align-items:center;justify-content:center;margin-top:24px;gap:8px}
 .layer_section .layer-content-desc {margin-top:16px;word-break:keep-all;line-height:1.6;font-size:13px}
 .layer_section .layer-content-desc2 {margin-top:20px;word-break:keep-all;line-height:1.6;font-size:12px;color:#949494}
+.layer_section .layer-content-desc3 {margin-top:8px;font-size:13px;color:#000}
+.layer_section .layer-content-desc3 span {color:#ff007e}
 .layer_section .t-center {text-align:center}
 
 .level-help-list {margin-top:20px;display:flex;flex-direction:column;gap:8px}
 .level-help-list .level-help-item {display:flex;align-items:center;gap:4px;font-size:13px}
 .level-help-list .level-help-item:before {width:3px;height:3px;border-radius:50%;background-color:#333;content:''}
+
+.step-info .step-info-item {margin-top:20px;font-size:13px;color:#000}
+.step-info .step-info-item .layer-content-desc2 {margin-top:4px}
 
 @media (min-width:1024px) {
     .layer_section .layer_section-container {width:400px}
@@ -883,4 +930,6 @@ html.scroll_off {overflow:hidden}
     .layer_section .layer-content {padding:28px}
     .layer_section .layer-content-desc {font-size:14px}
     .layer_section .layer-content-desc2 {font-size:13px}
+    .step-info .step-info-item {font-size:16px}
+    .layer_section .layer-content-desc3 {font-size:14px}
 }

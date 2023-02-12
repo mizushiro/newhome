@@ -30,14 +30,14 @@
                         <p class="production-name">한강스테이</p>
                     </div>
                     <div class="top-sticky-tab">
-                        <button type="button" class="btn-stick-item active">추진현황</button>
-                        <button type="button" class="btn-stick-item">사업정보</button>
-                        <button type="button" class="btn-stick-item">입지분석</button>
+                        <button type="button" class="btn-stick-item active" data-tab="추진현황">추진현황</button>
+                        <button type="button" class="btn-stick-item" data-tab="사업정보">사업정보</button>
+                        <button type="button" class="btn-stick-item" data-tab="입지분석">입지분석</button>
                     </div>
                 </div>
             </div>
 
-            <section class="section-group">
+            <section class="section-group" data-tabname="추진현황">
                 <div class="product-detail-section">
                     <div class="product-title-box">
                         <h2 class="product-detail-title">추천영상</h2>
@@ -109,7 +109,7 @@
                 </div>
             </section>
 
-            <section class="section-group">
+            <section class="section-group" data-tabname="사업정보">
                 <div class="product-detail-section">
                     <h2 class="product-detail-title">사업정보</h2>
                     <div class="product-info-list">
@@ -173,7 +173,7 @@
                 </div>
             </section>
 
-            <section class="section-group">
+            <section class="section-group" data-tabname="입지분석">
                 <div class="product-detail-section">
                     <h2 class="product-detail-title">입지분석</h2>
                     <div class="box-level-b">
@@ -280,7 +280,7 @@
                         <div class="talk-content">
                             <div class="writer-box">
                                 <p class="writer-info"><span class="name">새집투어</span><span class="data">2023.02.01</span></p>
-                                <div class="r-box active">
+                                <div class="r-box">
                                     <button type="button" class="btn-edit"><i class="ic-edit"></i></button>
                                     <div class="edit-box">
                                         <button type="button" class="btn-edit-item"><i class="ic-modify"></i>수정</button>
@@ -378,6 +378,9 @@
 
         newhome.callLayer();
 		tollTipLayer();
+
+        newHomeUI.tabScroll();
+        newHomeUI.layerEdit();
 	};
 </script>
 </body>

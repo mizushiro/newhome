@@ -24,11 +24,14 @@
         <div class="main-top-box">
             <div class="main-top-col col-left">
                 <div class="top-box-info">
-                    <p class="top-box-desc"><span>모아타운, 가로정비, 소규모재건축</span> 추진 현황을 알려드립니다.</p>
+                    <!--<p class="top-box-desc"><span>모아타운, 가로정비, 소규모재건축</span> 추진 현황을 알려드립니다.</p>-->
+                    <p class="top-box-desc">노후주택을 <strong>새집</strong>으로 <strong>새집투어</strong></p>
                     <i class="top-box-icon"></i>
                 </div>
                 <div class="box-top10">
-                    <a href="" class="link-top10">인기 조회수 TOP 10위</a>
+                    <button type="button" class="btn-top10" data-layer="top10-layer"><span class="for-a11y">TOP 10위 보기</span></button>
+                    <span class="link-top10">인기 조회수 TOP 10위</span>
+                    <span class="top10-data">1. 서울 강서구 염창동 98, 98-4, 98-6 번지</span>
                 </div>
             </div>
             <div class="main-top-col">
@@ -123,6 +126,29 @@
         footer 영역
     </footer>
 </div>
+
+<!-- S : Top10 layer -->
+<div id="top10-layer" class="layer_section">
+    <div class="layer_section-container">
+        <div class="layer-content">
+            <h1 class="layer-title">인기 조회수 TOP 10위</h1>
+            <ul class="top10-list">
+                <li class="top10-list-item">1. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">2. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">3. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">4. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">5. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">6. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">7. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">8. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">9. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+                <li class="top10-list-item">10. 서울 강서구 염창동 98, 98-4, 98-6 번지</li>
+            </ul>
+        </div>
+        <button type="button" class="btn_layer-close"><i class="ic-close"></i><span class="for-a11y">레이어팝업 닫기</span></button>
+    </div>
+</div>
+<!-- E : Top10 layer -->
 
 <script type="text/javascript">
     var swiper = new Swiper('.main-banner', {

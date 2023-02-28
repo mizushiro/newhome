@@ -160,13 +160,17 @@
                                     <label for="mapUi_2" class="btn">주변 환경</label>
 
                                     <div class="map-around-wrap">
-                                        <button type="button" class="btn active" data-icon="subway" aria-label="지하철"></button>
-                                        <button type="button" class="btn" data-icon="school" aria-label="학교"></button>
-                                        <button type="button" class="btn active" data-icon="mart" aria-label="마트"></button>
-                                        <button type="button" class="btn" data-icon="pharmacy" aria-label="약국"></button>
-                                        <button type="button" class="btn" data-icon="park" aria-label="공원"></button>
+                                        <button type="button" class="btn active" aria-label="초등학교">초등<br>학교</button>
+                                        <button type="button" class="btn"  aria-label="중학교">중<br>학교</button>
+                                        <button type="button" class="btn active" aria-label="고등학교">고등<br>학교</button>
+                                        <button type="button" class="btn" aria-label="의료시설">의료<br>시설</button>
+                                        <button type="button" class="btn" aria-label="공원">공원</button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="map-expand-box">
+                                <button type="button" class="btn-expand"><span class="for-a11y">확대</span></button>
+                                <button type="button" class="btn-reduction"><span class="for-a11y">축소</span></button>
                             </div>
                         </div>
                     </div>
@@ -182,11 +186,31 @@
                             <div class="level-img2">
                                 <img src="../assets/images/common/level2-1.jpg" alt="1등급">
                             </div>
-                            <div class="level-data-group">
+                            <div class="product-gray-box">
+                                교통시설과의 거리, 주변 교통 시설 개수 등의 정보를 이용하여 교통시설 접근성 평가 데이터 산출.
+                            </div>
+                            <div class="product-data-group">
+                                <div class="product-data-subway">
+                                    <div class="subway-line">
+                                        <i class="subway-line2"></i>
+                                        <span class="subway-name">2호선 까치산역</span>
+                                    </div>
+                                    <p class="subway-distance">2.1km, 도보 7분거리 복사</p>
+                                </div>
+                                <div class="product-data-subway">
+                                    <div class="subway-line">
+                                        <i class="subway-line5"></i>
+                                        <span class="subway-name">5호선 까치산역</span>
+                                    </div>
+                                    <p class="subway-distance">2.1km, 도보 7분거리 복사</p>
+                                </div>
+                            </div>
+
+                            <!--<div class="level-data-group">
                                 <p class="level-chart-title">- 직주근접</p>
                                 <p class="level-chart-title">- 5호선 우장산역 도보 5분</p>
                                 <p class="level-chart-title">- 원종홍대선 강서구청역-화곡역 800m 이내 예정</p>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="box-level-item">
@@ -194,11 +218,28 @@
                             <div class="level-img2">
                                 <img src="../assets/images/common/level2-4.jpg" alt="4등급">
                             </div>
-                            <div class="level-data-group">
+                            <div class="product-gray-box">
+                                배정 초등학교와의 거리, 중학 교의 특목고 및 자사고 진학률 등의 정보를 바탕으로 교육 시설 접근성 평가 데이터 산출.
+                            </div>
+                            <div class="product-data-group">
+                                <div class="product-data-item">
+                                    <img src="../assets/images/map/map-icon-1.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">이룸 초등학교 64m</span>
+                                </div>
+                                <div class="product-data-item">
+                                    <img src="../assets/images/map/map-icon-2.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">이룸 중학교 64m</span>
+                                </div>
+                                <div class="product-data-item">
+                                    <img src="../assets/images/map/map-icon-3.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">이룸 고등학교 64m</span>
+                                </div>
+                            </div>
+                            <!--<div class="level-data-group">
                                 <p class="level-chart-title">- 강서초 300m 이내</p>
                                 <p class="level-chart-title">- 마곡고 920m 이내</p>
                                 <p class="level-chart-title">- 발산초 500m 이내</p>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="box-level-item">
@@ -206,10 +247,22 @@
                             <div class="level-img2">
                                 <img src="../assets/images/common/level2-2.jpg" alt="1등급">
                             </div>
-                            <div class="level-data-group">
-                                <p class="level-chart-title">- 음식점 87곳</p>
-                                <p class="level-chart-title">- 카페/음료 14곳</p>
-                                <p class="level-chart-title">- 병의원 약국 5곳</p>
+                            <div class="product-gray-box">
+                                대형쇼핑몰, 카페 등 편의시설 과 의 거리 및 주변 편의시설 개수를 이용하여 생활편의시설 접근성 평가 데이터 산출.
+                            </div>
+                            <div class="product-data-group">
+                                <div class="product-data-item">
+                                    <img src="../assets/images/map/map-icon-6.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">쇼핑몰 0곳</span>
+                                </div>
+                                <div class="product-data-item">
+                                    <img src="../assets/images/map/map-icon-7.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">카페/음료 10곳</span>
+                                </div>
+                                <div class="product-data-item">
+                                    <img src="../assets/images/map/map-icon-4.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">병의원 약국 6곳 복사 2</span>
+                                </div>
                             </div>
                         </div>
 
@@ -218,8 +271,25 @@
                             <div class="level-img2">
                                 <img src="../assets/images/common/level2-3.jpg" alt="3등급">
                             </div>
-                            <div class="level-chart-box">
-
+                            <div class="product-gray-box">
+                                교통, 교육, 상권 지표를 종합하여 등급 부여
+                            </div>
+                            <div class="product-data-group">
+                                <div class="product-data-item">
+                                    <img src="../assets/images/common/check-icon.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">교통 1등급</span>
+                                    <img src="../assets/images/common/level2-1.jpg" alt="1등급" class="size-big">
+                                </div>
+                                <div class="product-data-item">
+                                    <img src="../assets/images/common/check-icon.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">교육 3등급</span>
+                                    <img src="../assets/images/common/level2-3.jpg" alt="3등급" class="size-big">
+                                </div>
+                                <div class="product-data-item">
+                                    <img src="../assets/images/common/check-icon.png" alt="" class="size-mini">
+                                    <span class="product-data-item-desc">상권 2등급</span>
+                                    <img src="../assets/images/common/level2-2.jpg" alt="2등급" class="size-big">
+                                </div>
                             </div>
                         </div>
 
@@ -266,6 +336,13 @@
                         </dt>
                         <dd class="property-summary-data">41135-2022-00015</dd>
                     </dl>
+                </div>
+            </div>
+
+            <div class="property-find">
+                <div class="property-find-box">
+                    <p class="property-find-desc">이 곳에 광고하실 중개사님을 찾습니다.<br>중개사무소 선착순 1곳만 가능합니다.</p>
+                    <a href="" class="btn-basic-f">광고 문의</a>
                 </div>
             </div>
 

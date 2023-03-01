@@ -125,6 +125,7 @@ html.scroll_off {overflow:hidden}
 /* layout */
 .base-wrap {display:flex;flex-direction:column;min-height:100%}
 .content-wrap {flex:1 auto;padding:48px 16px;position:relative}
+.company-wrap {flex:1 auto}
 @media (min-width:1024px) {
     .content-wrap {padding:60px 48px}
 }
@@ -1042,4 +1043,140 @@ html.scroll_off {overflow:hidden}
     .product-data-item .product-data-item-desc,
     .product-data-subway .subway-name,
     .product-data-subway .subway-distance {font-size:16px}
+}
+
+.company-top {padding:120px 24px 80px;background:url("../../images/company/top-bg.png") no-repeat 50% 0;background-size:cover}
+.company-top-text-1 {font-size:24px;font-weight:800;color:#fff;text-align:center}
+.company-top-text-1 i {font-style:normal}
+.company-top-text-1 i,
+.company-top-text-1 span {position:relative}
+.company-top-text-1 i:before,
+.company-top-text-1 span:before {content:'';position:absolute;top:-12px;left:50%;width:6px;height:6px;border-radius:50%;box-sizing:border-box;margin-left:-3px}
+.company-top-text-1 span:before {border:1px solid #fff}
+.company-top-text-1 i:before {background-color:#fff}
+.company-top-text-2 {font-size:16px;font-weight:700;color:#fff;text-align:center;margin-top:16px;word-break:keep-all}
+.company-top-round-group {display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;margin-top:40px}
+.company-top-round-item {background-color:#fff;border-radius:50%;width:180px;height:180px;padding:40px;display:flex;align-items:center;justify-content:center;position:relative}
+.company-top-round-desc {font-size:14px;text-align:center;word-break:keep-all;line-height:1.5;color:#000}
+.company-top-round-item:after {content:'';position:absolute;left:50%;bottom:-16px;height:16px;width:2px;background-color:#fff}
+.company-top-round-item ~ .company-top-round-item:after {height:36px;bottom:-36px}
+.company-top-round-item.last {width:156px;height:156px;padding:30px;margin-top:40px}
+.company-top-round-item.last:before {content:'';position:absolute;top:-12px;right:-12px;bottom:-12px;left:-12px;border:12px solid rgba(255,255,255,.5);border-radius:50%}
+.company-top-round-item.last .company-top-round-desc {font-weight:800}
+.company-top-round-item.last:after {width:0;height:0;border-width:8px;border-style:solid;border-color:#fff transparent transparent transparent;background-color:transparent;margin-left:-7px;bottom:calc(100% + 10px)}
+@media (min-width:768px) {
+    .company-top-round-group {flex-direction:row}
+    .company-top-round-item.last {margin-top:0;margin-left:40px}
+    .company-top-round-item:after {top:50%;bottom:auto;left:auto;right:-16px;height:2px;width:16px;margin:-1px 0 0}
+    .company-top-round-item ~ .company-top-round-item:after {height:2px;width:36px;bottom:auto;right:-36px}
+    .company-top-round-item.last:after {width:0;height:0;right:calc(100% + 10px);transform: rotate(-90deg);margin:-7px 0 0}
+}
+@media (min-width:1024px) {
+    .company-top-text-1 {font-size:28px}
+    .company-top-text-2 {font-size:18px}
+    .company-top-round-group {gap:68px}
+    .company-top-round-item:after {width:68px;right:-68px}
+    .company-top-round-item ~ .company-top-round-item:after {right:-84px;width:84px}
+    .company-top-round-item.last:after {width:0;right:calc(100% + 10px)}
+}
+@media (min-width:1280px) {
+    .company-box {max-width:1280px;margin:0 auto}
+    .company-top-round-item {width:240px;height:240px}
+    .company-top-round-item.last {width:216px;height:216px}
+    .company-top-round-desc {font-size:16px}
+}
+
+.company-section-1 {margin:60px 20px}
+.company-section-1-title {font-size:24px;font-weight:800;color:#000;text-align:center;word-break:keep-all}
+.company-section-1-title span {color:#c5c735}
+.company-section-1-content {display:flex;flex-direction:column;margin-top:32px}
+.company-section-1-sub-title {font-size:18px;color:#c5c735;font-weight:800}
+.company-section-1-list {display:flex;flex-direction:column;gap:4px;margin-top:12px}
+.company-section-1-item {position:relative;padding-left:12px;font-size:13px;line-height:1.5;color:#000}
+.company-section-1-item:before {content:'';position:absolute;left:0;width:5px;height:5px;border-radius:50%;background-color:#c5c735;top:6px}
+.company-section-1-img {padding:0 60px}
+.company-section-1-img img {max-width:100%}
+@media (min-width:768px) {
+    .company-section-1-content {flex-direction:row;padding:0 60px;align-items:flex-end}
+    .company-section-1-img {padding:0;margin-left:auto;width:40%}
+}
+@media (min-width:1024px) {
+    .company-section-1-title {font-size:28px}
+    .company-section-1-content {margin-top:48px;padding:0 100px}
+    .company-section-1-sub-title {font-size:20px}
+    .company-section-1-list {gap:8px;margin-top:20px}
+    .company-section-1-item {font-size:16px}
+    .company-section-1 .company-box {max-width:1024px}
+}
+
+.company-section-2 {padding:60px 20px;background-color:#f5f6f7}
+.company-section-2-desc {font-size:16px;line-height:1.6;color:#000;word-break:keep-all;text-align:center}
+.company-section-2-group {display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.company-section-2-item {width:calc((100% - 8px) / 2)}
+.company-section-2-item img {width:100%}
+@media (min-width:768px) {
+    .company-section-2-group {gap:12px}
+    .company-section-2-item {width:calc((100% - 24px) / 3)}
+}
+@media (min-width:1024px) {
+    .company-section-2-desc {font-size:20px}
+    .company-section-2-group {margin:40px 0}
+    .company-section-2-item {width:calc((100% - 48px) / 5)}
+}
+.company-section-3 {margin:60px 20px}
+.company-section-3-desc1 {font-size:16px;line-height:1.6;color:#000;word-break:keep-all;text-align:center}
+.company-section-3-desc2 {font-size:16px;line-height:1.6;color:#000;word-break:keep-all;text-align:center;font-weight:800;margin-top:16px}
+.company-section-3-group {margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.company-section-3-item {padding:20px;border:2px solid #9d9d9d;border-radius:8px}
+.company-section-3-title {text-align:center;font-weight:800;font-size:18px}
+.company-section-3-desc3 {font-size:14px;color:#000;line-height:1.6;text-align:center;margin:12px 12px 24px;word-break:keep-all}
+.company-section-3-desc3 span {font-weight:800;color:#c5c735}
+.company-section-3-desc-group {display:flex;flex-direction:column;gap:12px;align-items:center}
+.company-section-3-desc4 {display:flex;font-size:14px;gap:4px}
+.company-section-3-desc4 img {height:16px}
+@media (min-width:768px) {
+    .company-section-3-group {flex-direction:row}
+    .company-section-3-item {flex:1}
+}
+@media (min-width:1024px) {
+    .company-section-3-desc1,
+    .company-section-3-desc2 {font-size:20px}
+    .company-section-3-group {margin-top:40px;padding:0 100px;gap:24px}
+    .company-section-3-item {padding:52px 28px}
+    .company-section-3-title {font-size:24px}
+    .company-section-3-desc4,
+    .company-section-3-desc3 {font-size:18px}
+    .company-section-3-desc3 {margin:20px 0 32px}
+    .company-section-3-desc4 img {height:20px}
+}
+
+.company-section-4 {padding:60px 20px;background-color:#c5c735}
+.company-section-4-title {font-size:24px;color:#fff;font-weight:800;text-align:center}
+.company-section-4-group {margin-top:24px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.company-section-4-item {height:68px}
+.company-section-4-item img {height:100%}
+@media (min-width:768px) {
+    .company-section-4-item {height:64px}
+}
+@media (min-width:1024px) {
+    .company-section-4-title {font-size:28px}
+    .company-section-4-group {margin-top:32px}
+    .company-section-4-item {height:80px}
+}
+@media (min-width:1280px) {
+    .company-section-4-item {height:100px}
+}
+
+.company-section-5 {margin:60px 20px}
+.company-section-5-group {display:flex;flex-direction:column;gap:24px;align-items:center}
+.company-section-5-title {font-size:28px;font-weight:800;color:#000;text-align:center}
+.company-section-5-desc {font-size:16px;line-height:1.6;color:#000;word-break:keep-all;text-align:center}
+.company-section-5-desc span {color:#c5c735;font-weight:800}
+@media (min-width:1024px) {
+    .company-section-5-group {flex-direction:row;align-items:flex-start;padding:0 100px;gap:100px}
+    .company-section-5-title {flex-shrink:0;font-size:32px}
+    .company-section-5-desc {text-align:left;font-size:20px}
+}
+@media (min-width:1280px) {
+    .company-section-5 {margin:100px 20px}
 }

@@ -1180,3 +1180,23 @@ html.scroll_off {overflow:hidden}
 @media (min-width:1280px) {
     .company-section-5 {margin:100px 20px}
 }
+
+/* 최근 실거래가 */
+.real-transaction-desc-box {display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.real-transaction-desc {font-size:14px;color:#bfbfbf}
+.btn-change-unit2 {border-radius:9999px;height:24px;display:flex;align-items:center;gap:4px;font-size:12px;padding:0 8px;background-color:#efefef}
+.real-transaction-table {margin-top:12px;border-bottom:1px solid #efefef;overflow-y:overlay;max-height:256px}
+.real-transaction-table::-webkit-scrollbar-thumb {background-color:rgba(0,0,0,.1)}
+.real-transaction-table thead th {background-color:#efefef;padding:12px 8px;text-align:center;color:#000;font-size:14px;font-weight:600;position:sticky;top:0}
+.real-transaction-table tbody td {text-align:center;padding:12px 4px;color:#000;font-weight:500;border-bottom:1px solid #efefef}
+.real-transaction-table tbody td.price {font-weight:800}
+.real-transaction-table tbody td:first-child {border-left:1px solid #efefef}
+.real-transaction-table tbody td:last-child {border-right:1px solid #efefef}
+.real-transaction-table tbody tr:last-child td {border-bottom:none}
+.real-transaction-table tbody tr:hover td {background-color:#5c636a;color:#fff}
+.real-transaction-table tbody tr:hover td.price {color:#c5c735}
+@media (min-width:1024px) {
+    .real-transaction-table {max-height:278px}
+    .real-transaction-table thead th,
+    .real-transaction-table tbody td {font-size:16px}
+}

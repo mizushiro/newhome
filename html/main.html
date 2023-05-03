@@ -127,6 +127,61 @@
     </footer>
 </div>
 
+<!-- S : 메인 팝업 신규 -->
+<div id="main-popup" class="layer_section new-home-info showing">
+    <div class="layer_section-container">
+        <div class="layer-content">
+            <h1 class="new-home-info-title">
+                <i class="ic-logo2"></i>
+                새집투어 소개
+            </h1>
+            <p class="new-home-info-desc">새집투어는 소규모 주택정비사업 <br>전용 플랫폼입니다.</p>
+            <div class="new-home-info-content-box">
+                <div CLASS="new-home-info-content">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">1. 소규모 주택정비사업으로는 모아타운, 가로정비주택, 소규모재건축 등이 있습니다.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">2. 소규모 주택정비사업은 도시재생의 한 형태로, 노후화된 지역을 새롭게 정비하고 새 아파트로 탈바꿈되어 주거환경을 개선할 수 있습니다.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">3. 소규모 주택정비사업은 각종 규제 완화와 사업절차 간소화로 빠르다는 장점이 있습니다.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">4. 불확실하고 잘못된 정보로 재개발에 투자해 서 오랜 기간 자금이 묶이진 않으셨나요?</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">5. 새집투어에서는 단계별 추진현황을 제공함 으로 새 아파트로 확정된 사업지에 대해 의사 결정을 할 수 있습니다.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">6. 새집투어는 노후주택을 매입하여 새 아파트 를 원하는 수요자들에게 안정적인 매물 거래와 투자를 할 수 있도록 서비스를 제공합니다.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p class="new-home-info-content-desc">7. 새집투어에서는 청약홈에 노출되지 않는 새 아파트로 탈바꿈 되는 아파트 분양정보를 볼 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <p class="new-home-info-desc2">자! 그럼 이제 우리동네 모아타운, 가로주택 등<br>
+                노후주택에서 새집으로 바뀌는 곳이 어디인지 쉽고<br>
+                간편하게 투어해 보세요~</p>
+            <p class="new-home-info-desc3">노후주택을 새집으로!!!<span>“새집투어”</span></p>
+            <div class="pop-never-view">
+                <span class="box-checkbox-a">
+                    <input type="checkbox" id="agree3" class="form-checkbox" />
+                    <label for="agree3">다시보지 않기</label>
+                </span>
+            </div>
+        </div>
+        <button type="button" class="btn_layer-close"><i class="ic-close"></i><span class="for-a11y">레이어팝업 닫기</span></button>
+    </div>
+</div>
+
+
 <!-- S : Top10 layer -->
 <div id="top10-layer" class="layer_section">
     <div class="layer_section-container">
@@ -157,6 +212,15 @@
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+        },
+    });
+
+    var swiper2 = new Swiper('.new-home-info-content', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
     });
 

@@ -970,6 +970,20 @@ html.scroll_off {overflow:hidden}
 .top10-list {margin-top:20px;display:flex;flex-direction:column;gap:12px}
 .top10-list-item {font-size:14px;color:#000;line-height:18px;font-weight:700}
 
+.new-home-info-title {font-size:18px;color:#000;font-weight:800;text-align:center;display:flex;align-items:center;gap:8px;justify-content:center;margin-top:32px}
+.ic-logo2 {aspect-ratio:28/30;display:block;background:url("../../images/common/ic-logo2.png") no-repeat 50% 50%;background-size:contain;width:18px}
+.new-home-info-desc {font-size:13px;color:#000;font-weight:700;text-align:center;margin-top:16px}
+.new-home-info-desc2 {font-size:13px;color:#000;font-weight:700;text-align:center;margin-top:24px;line-height:1.5}
+.new-home-info-desc3 {font-size:13px;color:#c5c735;font-weight:700;text-align:center;margin-top:16px}
+.new-home-info-desc3 span {padding-left:12px}
+.new-home-info-content-box {background-color:#000;padding:24px 44px;margin:24px -20px 0}
+.new-home-info-content {overflow:hidden}
+.pop-never-view {position:absolute;top:16px;left:20px}
+.pop-never-view .box-checkbox-a label {color:#a0a0a0}
+.new-home-info-content-desc {font-size:14px;color:#c5c735;line-height:1.6}
+.new-home-info-content-box .swiper-button-next:after,
+.new-home-info-content-box .swiper-button-prev:after {font-size:20px;color:#fff}
+
 @media (min-width:1024px) {
     .layer_section .layer_section-container {width:400px}
     .layer_section .layer-title {font-size:20px}
@@ -978,6 +992,19 @@ html.scroll_off {overflow:hidden}
     .layer_section .layer-content-desc2 {font-size:13px}
     .step-info .step-info-item {font-size:16px}
     .layer_section .layer-content-desc3 {font-size:14px}
+    .layer_section.new-home-info .layer_section-container {width:500px}
+
+    .new-home-info-title {font-size:30px}
+    .ic-logo2 {width:28px}
+
+    .new-home-info-desc,
+    .new-home-info-desc2,
+    .new-home-info-desc3 {font-size:18px;}
+    .new-home-info-desc br {display:none}
+    .new-home-info-content-box {margin-right:-28px;margin-left:-28px;padding:32px 60px}
+    .new-home-info-content-desc {font-size:20px}
+    .new-home-info-content-box .swiper-button-next:after,
+    .new-home-info-content-box .swiper-button-prev:after {font-size:30px}
 }
 
 .property-info {margin-top:32px;text-align:center}
@@ -986,6 +1013,7 @@ html.scroll_off {overflow:hidden}
 .property-summary-item {display:flex;align-items:flex-start;gap:12px}
 .property-summary-title {flex-shrink:0;width:52px;display:flex;justify-content:space-between;font-size:13px;line-height:1.5;color:#7f7f7f}
 .property-summary-data {font-size:13px;line-height:1.5;color:#000;text-align:left}
+
 @media (min-width:768px) {
     .property-summary {margin-top:28px;gap:8px}
     .property-summary-title {font-size:14px}

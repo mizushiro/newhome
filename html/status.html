@@ -23,6 +23,30 @@
     <div class="content-wrap type-map">
         <div class="map-area">
             <div class="map-left">
+                <div class="top1-box">
+                    <div class="swiper-wrapper">
+                        <div class="top1-info swiper-slide">
+                            <div class="top1-number number1">1</div>
+                            <div class="top1-data"><p>신일 해피트리, 서울 강서구 내발산동 712-13</p></div>
+                        </div>
+                        <div class="top1-info swiper-slide">
+                            <div class="top1-number number2">2</div>
+                            <div class="top1-data"><p>신일 해피트리, 서울 강서구 내발산동 712-13</p></div>
+                        </div>
+                        <div class="top1-info swiper-slide">
+                            <div class="top1-number number3">3</div>
+                            <div class="top1-data"><p>신일 해피트리, 서울 강서구 내발산동 712-13</p></div>
+                        </div>
+                        <div class="top1-info swiper-slide">
+                            <div class="top1-number">4</div>
+                            <div class="top1-data"><p>신일 해피트리, 서울 강서구 내발산동 712-13</p></div>
+                        </div>
+                        <div class="top1-info swiper-slide">
+                            <div class="top1-number">5</div>
+                            <div class="top1-data"><p>신일 해피트리, 서울 강서구 내발산동 712-13</p></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="map-class">
                      <button type="button" class="btn active"><span>전체</span></button>
                     <button type="button" class="btn"><span>소규모재건축</span></button>
@@ -145,6 +169,19 @@
 </div>
 <script type="text/javascript">
 	window.onload = function() {
+        var swiper = new Swiper('.top1-box', {
+            direction: "vertical",
+            slidesPerView: 1,
+            spaceBetween: 0,
+            effect: "cube",
+            grabCursor: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
         newhome.callLayer();
 		tollTipLayer();
 	};

@@ -208,6 +208,7 @@ html.scroll_off {overflow:hidden}
 .ic-my-menu1 {background-image:url("../../images/common/ic-mymenu1.png")}
 .ic-my-menu2 {background-image:url("../../images/common/ic-mymenu2.png")}
 .ic-my-menu3 {background-image:url("../../images/common/ic-mymenu3.png")}
+.ic-my-menu4 {background-image:url("../../images/common/ic-mymenu4.png")}
 .ic-interest {display:inline-block;width:13px;height:100%;background:url("../../images/common/ic-interest.png") no-repeat 50% 50%;background-size:contain}
 .active .ic-interest {background-image:url("../../images/common/ic-interest-active.png")}
 .ic-sh {display:inline-block;width:14px;height:100%;background:url("../../images/common/ic-sh.png") no-repeat 50% 50%;background-size:contain}
